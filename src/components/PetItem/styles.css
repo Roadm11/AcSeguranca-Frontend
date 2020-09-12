@@ -1,0 +1,99 @@
+.pet-item {
+    background: var(--color-box-base);
+    border: 1px solid var(--color-line-in-white);
+    border-radius: 0.8rem;
+    margin-top: 12px;
+    overflow: hidden;
+    height: 50px;
+}
+
+.pet-item div {
+    display: inline-flex;
+}
+
+.pet-item div strong {
+    font: 700 2.4rem Archivo;
+    display: block;
+    color: var(--color-text-title);
+    margin-left: 12px;
+    margin-top: 12px;
+    width: 350px;
+}
+
+.pet-item div span {
+    font: 1.6rem;
+    display: block;
+    justify-content: center;
+    margin-left: 12px;
+    margin-top: 12px;
+    width: 150px;
+}
+
+.pet-item div div {
+    width: 200px;
+}
+
+.pet-item div div a {
+    width: 80px;
+    height: 30px;
+    background: var(--color-secundary);
+    color: var(--color-button-text);
+    border: 0;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    font: 700 1.4rem Archivo;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    transition: 0.2s;
+    text-decoration: none;
+    margin-top: 12px;
+}
+
+.pet-item div div button {
+    width: 80px;
+    height: 30px;
+    background: #c6666c;
+    color: var(--color-button-text);
+    border: 0;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    font: 700 1.4rem Archivo;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    transition: 0.2s;
+    text-decoration: none;
+    margin-top: 12px;
+    margin-left: 8px;
+}
+
+.pet-item footer button:hover {
+    background: var(--color-secundary-dark);
+}
+
+@media (min-width: 700px) {
+     .pet-item header,
+     .pet-item footer {
+         padding: 3.2rem
+     }
+
+     .pet-item > p {
+         padding: 0 3.2rem
+     }
+
+     .pet-item footer p strong {
+         display: initial;
+         margin-left: 1.6rem;
+     }
+
+     .pet-item footer button {
+         width: 24.5rem;
+         font-size: 1.6rem;
+         justify-content: center;
+     }
+
+     .pet-item footer button img {
+         margin-right: 1.6rem;
+     }
+}
