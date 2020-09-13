@@ -8,7 +8,7 @@ import api from '../../services/api';
 
 import'./styles.css';
 
-function TeacherForm() {
+function PetForm() {
     const history = useHistory();
 
     const [name, setName] = useState('');
@@ -30,7 +30,7 @@ function TeacherForm() {
     };
 
     return (
-        <div id="page-teacher-form" className="container">
+        <div id="page-pet-form" className="container">
             <PageHeader 
                 title='Cadastro de Animais.'
             />
@@ -63,4 +63,4 @@ function TeacherForm() {
     )
 }
 
-export default TeacherForm;
+export default PetForm;

@@ -20,7 +20,7 @@ function PetList() {
         api.get('pets').then(response => {
             setPets(response.data);
         });
-    }, []);
+    }, [pets]);
 
     return (
         <div id="page-pet-list" className="container">

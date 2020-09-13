@@ -1,5 +1,5 @@
-import React, {useState, FormEvent} from 'react';
-import { useHistory } from 'react-router-dom';
+import React, { useState, FormEvent, useEffect } from 'react';
+import { useHistory, useLocation } from 'react-router-dom';
 
 import PageHeader from '../../components/PageHeader';
 import Input from '../../components/Input';
@@ -7,18 +7,28 @@ import Input from '../../components/Input';
 import api from '../../services/api';
 
 import'./styles.css';
+import { Pet } from '../../components/PetItem';
 
-function TeacherForm() {
+function PetForm(this: any) {
     const history = useHistory();
+    const location = useLocation<Pet>();
 
+    const [id, setId] = useState('');
     const [name, setName] = useState('');
     const [animal, setAnimal] = useState('');
 
+    useEffect(() => {
+        const { _id, name, animal } = location.state;
+
+        setId(_id);
+        setName(name);
+        setAnimal(animal);
+    }, [location]);
     
     function handleUpdatePet(e: FormEvent){
         e.preventDefault();
 
-        api.put('pets', {
+        api.put(`pets/${id}`, {
             name,
             animal
         }).then(() => {
@@ -31,7 +41,7 @@ function TeacherForm() {
     };
 
     return (
-        <div id="page-teacher-form" className="container">
+        <div id="page-pet-form" className="container">
             <PageHeader 
                 title='Edição do Pet.'
             />
@@ -55,7 +65,7 @@ function TeacherForm() {
                     </fieldset>
                     <footer>
                         <button type='submit'>
-                            Cadastrar Pet
+                            Editar Pet
                         </button>
                     </footer>
                 </form>
@@ -64,4 +74,4 @@ function TeacherForm() {
     )
 }
 
-export default TeacherForm;
+export default PetForm;
