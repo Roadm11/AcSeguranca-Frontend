@@ -3,9 +3,9 @@
 # dependencies
 /node_modules
 /.pnp
+/package-lock.json
 .pnp.js
 .env
-.package-lock.json
 
 # testing
 /coverage

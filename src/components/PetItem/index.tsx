@@ -27,8 +27,8 @@ const PetItem: React.FC<PetItemProps> = ({ pet }) => {
             
                 <div>
                     <NavLink exact to={{
-                        pathname: "/update",
-                        state: pet
+                            pathname: "/update",
+                            state: pet
                         }}
                     >
                         Editar
