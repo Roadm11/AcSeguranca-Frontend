@@ -19,7 +19,7 @@ function PetForm(this: any) {
 
     useEffect(() => {
         const { _id, name, animal } = location.state;
-
+        console.log(location.state);
         setId(_id);
         setName(name);
         setAnimal(animal);
